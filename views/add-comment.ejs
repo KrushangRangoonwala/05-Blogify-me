@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./parsers/head') %>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <%- include('./parsers/nav') %>
+    <div class="m-4">
+      <form
+        action="/blog/add-comment/<%= blog_id %>"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="comment" class="form-label">Comment</label>
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              id="comment"
+              name="comment"
+              required
+            ></textarea>
+            <label for="floatingTextarea">Type your message here..</label>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Cover Image</label>
+          <input
+            type="file"
+            class="form-control"
+            id="image"
+            name="image"
+            aria-describedby="emailHelp"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>
+    </div>
+
+    <%- include('./parsers/script') %>
+  </body>
+</html>

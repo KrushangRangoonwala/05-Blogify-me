@@ -1,0 +1,26 @@
+<div class="container">
+  <% comments.forEach(comment => { %>
+  <div
+    class="container"
+    style="
+      border: 1.7px solid gray;
+      border-radius: 8px;
+      margin: 10px;
+      padding: 7px;
+      padding-left: 25px;
+    "
+  >
+  <div class="container mt-4" style="margin-bottom: 5px">
+    <img src="../../../<%= blog.createdBy.userProfile %>" width="30px"  /> <%=
+    blog.createdBy.fullName %>
+  </div>
+
+  <% if ((comment.image)) { %>
+    <a href="../../../<%= comment.image %>"
+      ><img src="../../../<%= comment.image %>" width="250" alt="image"
+    /></a>
+  <% } %>
+    <p><%= comment.comment %></p>
+  </div>
+  <% }) %>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row row-cols-2">
+    <% allblog.forEach(blog => { %>
+    <div class="card m-4" style="width: 18rem">
+      <img src="<%= blog.coverImage %>" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title"><%= blog.title %></h5>
+        <a href="/blog/viewBlog/<%= blog._id %>/0" class="btn btn-primary"
+          >View</a
+        >
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>

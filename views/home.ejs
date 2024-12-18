@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./parsers/head') %>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <%- include('./parsers/nav') %> 
+    
+    <% if ((locals.user)) { %>
+    <p class="m-2">Hii its <%= locals.user.fullName %> ... !!!</p>
+    <P><%= allblog %></P>
+    <%- include('./parsers/userBlogs') %> 
+    
+    <% } else { %>
+    <p class="m-2">Want to make account..!!</p>
+    <% } %> 
+    
+    <%- include('./parsers/script') %>
+  </body>
+</html>

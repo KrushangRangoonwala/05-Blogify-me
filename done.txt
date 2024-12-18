@@ -1,0 +1,15 @@
+blog :
+form
+path
+multer
+rendering blog
+
+--------------------------------------------------------
+checkforauthentication done
+
+nav.ejs >> if else done
+logout done
+
+afteer this signin get and post req doesn't work properly.
+
+>> We may use "url shortner" project's restrictTologgedInUser function technique

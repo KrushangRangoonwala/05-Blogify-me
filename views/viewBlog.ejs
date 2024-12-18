@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./parsers/head') %>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <%- include('./parsers/nav') %>
+    <div class="container mt-4">
+      <img src="../../../<%= blog.createdBy.userProfile %>" width="100px" /> <%=
+      blog.createdBy.fullName %>
+    </div>
+    <div class="container mt-4">
+      <h1><%= blog.title %></h1>
+      <a href="../../../<%= blog.coverImage %>">
+        <img
+          src="../../../<%= blog.coverImage %>"
+          width="800px"
+          class="m-4"
+          alt="..."
+        />
+      </a>
+      <p><%= blog.body %></p>
+
+      <a
+        class="btn btn-primary"
+        href="/blog/add-comment/<%= blog._id %>"
+        style="display: block; width: 145px; margin: 10px"
+        >Post Comment</a
+      >
+
+      <% if ((count)==1) { %>
+        <a
+        class="btn btn-primary"
+        href="/blog/viewBlog/<%= blog._id %>/1"
+        style="display: block; width: 145px; margin: 10px"
+        >Show Comments</a
+      >
+      <% } else {%>
+        <a
+          class="btn btn-primary"
+          href="/blog/viewBlog/<%= blog._id %>/0"
+          style="display: block; width: 145px; margin: 10px"
+          >Hide Comments</a
+        >
+        <div
+        class="container"
+        style="
+          border: 2px solid gray;
+          margin: 5px;
+          padding: 5px;
+          border-radius: 20px;
+          "
+      >
+      
+      <% if ((locals.comments)) { %> 
+        <%- include('./parsers/comments') %> 
+      <% }%>
+        
+    </div>
+    <%- include('./parsers/script') %>
+      <% } %>
+    </div>
+  </body>
+</html>
